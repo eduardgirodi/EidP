@@ -11,6 +11,17 @@ public class Palindromzahl {
         return ergebnis;
     }
 
+/**
+    public static int spiegeln(int zahl) {
+        int tempzahl1 = zahl;
+        int tempzahl2 = 0;
+        while(tempzahl1>0) {
+            tempzahl2 = tempzahl2 + (tempzahl1%10);
+            tempzahl2
+        }
+    }
+**/
+
     public static int spiegelAddieren(int zahl) {
         return spiegeln(zahl)+zahl;
     }
