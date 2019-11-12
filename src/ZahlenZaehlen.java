@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class ZahlenZaehlen {
 
-    //Beispieleingabe: 3 1 2 3 2 3 2 3 3
+    //Beispieleingabe: 3 1 2 3 2 3 2 3 3 .
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int first = sc.nextInt();
