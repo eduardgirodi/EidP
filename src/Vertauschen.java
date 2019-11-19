@@ -42,7 +42,7 @@ public class Vertauschen {
         if(!testInhaltGleich(inhalt, referenz)) {
             System.out.println("Fehler: inhalte stimmen nicht ueberein!");
         }
-        if(!testReferenzGleich(inhalt, referenz)) {
+        if(testReferenzGleich(inhalt, referenz)) {
             System.out.println("Fehler: Referenzen muessen unterschiedlich sein!");
         }
     }
