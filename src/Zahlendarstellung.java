@@ -25,6 +25,5 @@ public class Zahlendarstellung {
     }
 
     public static void main(String[] args) {
-        }
     }
  }
