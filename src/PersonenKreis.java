@@ -29,7 +29,7 @@ public class PersonenKreis {
 
     public static int naechsteVorhandene(int pErst, boolean[] pArray) {
         for(int i = pErst+1; i!=pErst; i=(i+1)%pArray.length) {
-            if(pArray[i%pArray.length] == true) {
+            if(pArray[i%pArray.length]) {
                 return i%pArray.length;
             }
         }
@@ -47,5 +47,6 @@ public class PersonenKreis {
     }
 
     public static void main(String[] args) {
+        personenEntfernen(100);
     }
 }
