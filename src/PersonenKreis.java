@@ -1,56 +1,51 @@
 public class PersonenKreis {
 
-    public static void gehen(int pN) {
+    public static void personenEntfernen(int pN) {
         boolean[] ergebnis = new boolean[pN];
-        int count = 0;
 
         for(int i=0; i<ergebnis.length; i++) {
-            ergebnis[i]=true;
+            ergebnis[i] = true;
         }
 
-        int j = 0;
-        while(anzahlNochDa(ergebnis)>2) {
-            int einsNaechster = naechsteVorhandene(j, ergebnis);
-            j = naechsteVorhandene(einsNaechster, ergebnis);
-            ergebnis[j] = false;
+        for(int lauf=0; anzahlNochDa(ergebnis)>2; lauf = naechsteVorhandene(lauf, ergebnis)) {
+            int einsNaechster = naechsteVorhandene(lauf, ergebnis);
+            lauf = naechsteVorhandene(einsNaechster, ergebnis);
+            ergebnis[lauf] = false;
         }
 
-
-
-
+        int person1 = 0;
+        int person2 = 0;
         for(int i=0; i<ergebnis.length; i++) {
-            System.out.println(ergebnis[i]);
+            if(ergebnis[i] && (person1 == 0)) {
+                person1 = i+1;
+            }
+            else if(ergebnis[i]) {
+                person2 = i+1;
+            }
         }
+
+        System.out.println("n=" +pN +": Person 1=" +person1 +", Person 2=" +person2);
     }
 
     public static int naechsteVorhandene(int pErst, boolean[] pArray) {
-        int run = (pErst+1)%pArray.length;
-        int count = 0;
-
-        while(count<pArray.length) {
-            int lauf = run%(pArray.length);
-            if(pArray[lauf]) {
-                return lauf;
-            }
-            else {
-                run++;
-                count++;
+        for(int i = pErst+1; i!=pErst; i=(i+1)%pArray.length) {
+            if(pArray[i%pArray.length] == true) {
+                return i%pArray.length;
             }
         }
-        System.out.println(run +" " +count);
-        return 1;
+        return -1;
     }
 
     public static int anzahlNochDa(boolean[] pArray) {
         int ergebnis = 0;
         for(int i=0; i<pArray.length; i++) {
-            if(pArray[i]==true);
-            ergebnis++;
+            if(pArray[i]) {
+                ergebnis++;
+            }
         }
         return ergebnis;
     }
 
     public static void main(String[] args) {
-        gehen(10);
     }
 }
