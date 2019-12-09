@@ -5,23 +5,31 @@ public class Musikstueck {
     int[] toene;
     int anzahlEinzelBewertungen;
     int gesamtBewertung = 0;
-    String ton = "";
-    String interpret = "";
 
     public Musikstueck(String[] interpreten, String titel, int[] toene) {
         this.interpreten = interpreten;
-        for(int i=0; i<interpreten.length; i++) {
-            interpret += interpreten[i] +", ";
-        }
         this.titel = titel;
         this.toene = toene;
+    }
+
+    public String printToene() {
+        String ergebnis = "";
         for(int i=0; i<toene.length; i++) {
-            ton += toene[i] +" ";
+            ergebnis += toene[i] +" ";
         }
+        return ergebnis;
+    }
+
+    public String printInterpreten() {
+        String ergebnis = "";
+        for(int i=0; i<interpreten.length; i++) {
+            ergebnis += interpreten[i] +", ";
+        }
+        return ergebnis;
     }
 
     public void abspielen() {
-        System.out.println(ton);
+        System.out.println(this.printToene());
     }
 
     public void neueBewertung(int bewertung) {
@@ -35,11 +43,11 @@ public class Musikstueck {
     }
 
     public String toString() {
-        return "Interpreten: " +interpret +"Titel: " +titel +", " +"Toene: " +ton +", " +"Anz. Bewertungen: " +anzahlEinzelBewertungen +", "+"Gesamtbewertung: " +getGesamtbewertung();
+        return "Interpreten: " +this.printInterpreten() +"Titel: " +titel +", " +"Toene: " +this.printToene() +", " +"Anz. Bewertungen: " +anzahlEinzelBewertungen +", "+"Gesamtbewertung: " +getGesamtbewertung();
     }
 
     public static void main(String[] args) {
-        String[] interpreten1 = {"wham"};
+        String[] interpreten1 = {"Wham"};
         String[] interpreten2 = {"Koelner Domspatzen", "Heino"};
         int[] toene1 = {1, 2, 3, 4, 5, 6};
         int[] toene2 = {6, 5, 4, 3, 2, 1};
