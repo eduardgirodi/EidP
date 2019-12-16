@@ -27,7 +27,7 @@ public class WebShop {
 
     public Kunde neuerKunde(String vorname, String nachname, double nachlass) {
         GuterKunde neu = new GuterKunde(vorname, nachname, nachlass);
-        for (int i=0; i<kundenArray.length; i++) {
+        for(int i=0; i<kundenArray.length; i++) {
             if(this.kundenArray[i] == null) {
                 this.kundenArray[i] = neu;
                 break;
@@ -40,7 +40,7 @@ public class WebShop {
         double gesamtPreis = 0.0;
         String ergebnis = "";
         if(kunde instanceof GuterKunde) {
-            ergebnis += "Rechnung fuer unseren guten Kunden " +kunde.getVorname() +" " +kunde.getNachname() + ", Preisnachlass " +((GuterKunde) kunde).getRabatt()*100 +"%:\n";
+            ergebnis += "Rechnung fuer unseren guten Kunden " +kunde.getVorname() +" " +kunde.getNachname() +", Preisnachlass " +((GuterKunde) kunde).getRabatt()*100 +"%:\n";
         } else {
             ergebnis += "Rechnung fuer "+kunde.getVorname() +" " +kunde.getNachname() +":\n";
 
@@ -55,7 +55,7 @@ public class WebShop {
                 }
                 String artikelName = this.artikelArray[j].getName();
                 int artikelBestand = this.artikelArray[j].getBestand();
-                if(ArtikelAktuell == artikelName && artikelBestand>0) {
+                if(ArtikelAktuell.equals(artikelName) && artikelBestand>0) {
                     this.artikelArray[j].BestandDekr();
                     if(kunde instanceof GuterKunde) {
                         artikelPreis = this.artikelArray[j].getRabattPreis(((GuterKunde) kunde).getRabatt());
