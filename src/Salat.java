@@ -9,6 +9,14 @@ public class Salat extends Gericht {
         anzahl++;
     }
 
+    public void wuerzen(String gewuerz) {
+        System.out.println("Salat wird gewuerzt mit " +gewuerz);
+    }
+
+    public void zubereiten() {
+        System.out.println("Salat wird zubereitet");
+    }
+
     public int getGewicht() {
         return this.gewicht;
     }

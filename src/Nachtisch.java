@@ -7,6 +7,14 @@ public class Nachtisch extends Gericht{
         anzahl++;
     }
 
+    public void wuerzen(String pGewuerz) {
+        System.out.println("Nachtisch wird gewuerzt mit " +pGewuerz);
+    }
+
+    public void zubereiten() {
+        System.out.println("Nachtisch wir zubereitet");
+    }
+
     public static int getAnzahl() {
         return anzahl;
     }

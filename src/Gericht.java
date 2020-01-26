@@ -1,7 +1,9 @@
-public abstract class Gericht {
+public abstract class Gericht implements Zubereiten{
 
     private static int gesamtAnzahl;
     private double preis;
+    public abstract void wuerzen(String gewuerz);
+    public abstract void zubereiten();
 
     public Gericht(double pPreis) {
         this.preis = pPreis;
