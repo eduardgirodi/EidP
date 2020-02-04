@@ -28,7 +28,6 @@ public class Eratosthenes {
                 primCount++;
             }
         }
-
         return ergebnis;
     }
 
